@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Tugas Day 7 - Afrialdy Syaputra</title>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg p-0">
+        <div class="container">
+            <a class="navbar-brand" href="">Afrialdy</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse p-2" id="navbarScroll">
+                <ul class="navbar-nav m-auto my-2 my-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#store">Store</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#produk">Produk</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+                </ul>
+                <form class="d-flex" role="search">
+                <input class="px-2 search" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn" type="submit">Search</button>
+                </form>
+            </div>
+            </div>
+        </nav>
+
+        <!-- Homepage -->
+        <section class="homepage" id="homepage">
+        <div class="container">
+            <div class="row">
+                <div class="col sm-3 col-lg-4 col-12 mb-3">
+                    <iframe src="https://www.youtube.com/embed/KLuTLF3x9sA?si=6i3gNeguc08pFtB_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <div class="col sm-3 col-lg-4 col-12 mb-3">
+                    <iframe src="https://www.youtube.com/embed/7PIji8OubXU?si=lIWRu41AfkcbBRn-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <div class="col sm-3 col-lg-4 col-12 mb-3">
+                    <iframe src="https://www.youtube.com/embed/B9VRvOKKwfs?si=mv0YiHsdFwLIKlHN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="location">
+            <p class="locate">
+                Click the button to see your location
+            </p>
+            <button class="btn btn-warning mt-3" onclick="findMe()">Get Location</button>
+            <p class="mt-3 text-center">Your Location: <br> <span id="showme"></span></p>
+        </div>
+    </section>   
+
+    <!-- Footer -->
+    <footer class="footer p-3">
+        <small class="copyright">&copy; Copyright 2024 Design By Afrialdy Syaputra. All rights reserved.</small>
+    </footer>
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous">
+    </script>
+    <script>
+        function findMe() {
+            if (navigator.geolocation)
+            {
+                navigator.geolocation.getCurrentPosition(showCoords);
+            }
+            else
+            {
+                alert ("This browser doesn't support the Geolocation API.");
+            }
+        }
+        function showCoords(position) {
+            var latitude = position.coords.latitude;
+            var longitude = position.coords.longitude;
+            var location = ("Latitude: " + latitude + " Longitude: " +longitude);
+            document.getElementById("showme").innerHTML = location;
+        }
+    </script>
+</body>
+</html>
